@@ -85,3 +85,28 @@ let myFunc: (a:number,b:number) => number
 myFunc = sumValue
 console.log(myFunc(5,5))
 */
+
+
+
+
+// object & type
+let dataObj: {name:string,age:number} = {
+    name: 'Henry',
+    age: 31,
+}
+
+dataObj = {
+    name: 'hello',
+    age: 12,
+}
+
+// 复杂对象类型
+let complex:{data:number[],myFunc:(item:number)=>number[]} = {
+    data: [1,2,34],
+    myFunc: function(item:number):number[]{
+        this.data.push(item)
+        return this.data
+    }
+}
+
+console.log(complex.myFunc(20))
