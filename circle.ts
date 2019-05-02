@@ -1,7 +1,9 @@
 namespace MyMath{
-    const PI = 3.14
+    export namespace Circle{
+        const PI = 3.14
 
-    export function calcCircle(value:number){
-        return value * PI
+        export function calcCircle(value:number){
+            return value * PI
+        }
     }
 }

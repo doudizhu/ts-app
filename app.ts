@@ -316,8 +316,18 @@ console.log(MyMath.PI)
 
 
 
+
+/*
 // 13.TypeScript-命名空间文件拆分
 
 console.log(MyMath.sumValue(10,5))
 console.log(MyMath.calcCircle(8))
 // tsc --outfile app.js circle.ts sumValue.ts app.ts
+*/
+
+
+
+// 14.TypeScript-多重命名空间及引入文件
+// 命名空间 多重命名空间
+console.log(MyMath.sumValue(10,5))
+console.log(MyMath.Circle.calcCircle(8))
