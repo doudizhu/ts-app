@@ -326,7 +326,7 @@ console.log(MyMath.calcCircle(8))
 */
 
 
-
+/*
 // 14.TypeScript-多重命名空间及引入文件
 // 命名空间 多重命名空间
 // console.log(MyMath.sumValue(10,5))
@@ -337,3 +337,27 @@ console.log(MyMath.calcCircle(8))
 console.log(MyMath.sumValue(10,5))
 console.log(MyMath.Circle.calcCircle(8))
 // tsc app.ts --outfile app.js
+*/
+
+
+
+// 15.TypeScript-模块module的使用
+// 模块
+// import { PI, calcCircle } from './stuff/circle'
+// import { sumValue } from './stuff/sumValue' // 注：加入default后不能引入
+// console.log(PI)
+// console.log(calcCircle(8))
+// console.log(sumValue(8,12))
+/**
+ * 待优化：目前测试仅此条命令可通过
+ * tsc --module amd app.ts
+ * 其余两条不能通过
+ * tsc --module commonjs app.ts
+ * 和
+ * tsc
+ */
+import * as Circle from './stuff/circle'
+import sum from './stuff/sumValue'
+console.log(Circle.PI)
+console.log(Circle.calcCircle(8))
+console.log(sum(8,12))
