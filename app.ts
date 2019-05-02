@@ -190,3 +190,30 @@ console.log(handleCount)
 
 
 
+// class 类（属性，方法）
+class Person{
+    name: string // 公开的，当前类，或被继承子类，或类外部都可用，等价于public name: string,
+    protected gender: string = '男'// 被保护的，当前类或被继承子类可用
+    private age: number = 27 // 私有的，当前类可用
+
+    constructor(name:string,public username:string){
+        this.name = name
+        this.username = username
+    }
+
+    printAge(age:number){
+        this.age = age
+        console.log(this.age)
+        person.setGender(this.gender)
+    }
+
+    private setGender(gender:string){
+        this.gender = gender
+        console.log(this.gender)
+    }
+}
+
+const person = new Person('米斯特吴','米修在线')
+console.log(person.name,person.username)
+
+person.printAge(30)
