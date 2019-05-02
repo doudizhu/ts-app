@@ -209,11 +209,47 @@ class Person{
 
     private setGender(gender:string){
         this.gender = gender
-        console.log(this.gender)
+        // console.log(this.gender)
+    }
+
+    printName(name:string){
+        this.name = name
+        console.log(this.name)
     }
 }
 
 const person = new Person('米斯特吴','米修在线')
-console.log(person.name,person.username)
+// console.log(person.name,person.username)
 
-person.printAge(30)
+// person.printAge(30)
+
+
+// student类 继承于 person类
+class Student extends Person {
+    studentId: number
+    constructor(name:string,username:string,studentId: number){
+        super(name,username)
+        // console.log(this.gender) // yes
+        // console.log(this.age) // no: 属性“age”为私有属性，只能在类“Person”中访问。ts(2341)
+        this.studentId = studentId
+
+        // this.setGender('女') // no
+    }
+
+    studentPrint(){
+        console.log(this.studentId)
+    }
+
+    // 重写父类方法
+    printName(name:string){
+        this.name = name
+        console.log(this.name)
+    }
+    
+}
+const misterwu = new Student('米斯特吴','米修在线1',2001)
+console.log(misterwu)
+
+misterwu.studentPrint()
+misterwu.printAge(32)
+misterwu.printName('ddd')
