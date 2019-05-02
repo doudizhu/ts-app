@@ -292,6 +292,7 @@ console.log(Person.calcCircle(8))
 */
 
 
+/*
 // namespace: 命名空间
 namespace MyMath{
     export const PI = 3.14
@@ -311,3 +312,12 @@ console.log(MyMath.sumValue(5,10))
 console.log(MyMath.calcCircle(25))
 console.log(PI)
 console.log(MyMath.PI)
+*/
+
+
+
+// 13.TypeScript-命名空间文件拆分
+
+console.log(MyMath.sumValue(10,5))
+console.log(MyMath.calcCircle(8))
+// tsc --outfile app.js circle.ts sumValue.ts app.ts
