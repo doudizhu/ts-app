@@ -162,3 +162,31 @@ y = (()=>{
     throw new Error('message')
 })()
 */
+
+
+/*
+// 练习
+type sumValue = {money:number,count:(val:number)=>void}
+
+let sumValue: sumValue = {
+    money: 200,
+    count(value:number):void{
+        this.money += value
+    }
+}
+
+let handleCount:{
+    name:string,
+    sumValue:sumValue,
+    friends:string[],
+} = {
+    name: 'Henry',
+    sumValue: sumValue,
+    friends:['bucky','elyse'],
+}
+handleCount.sumValue.count(500)
+console.log(handleCount)
+*/
+
+
+
