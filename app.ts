@@ -329,5 +329,11 @@ console.log(MyMath.calcCircle(8))
 
 // 14.TypeScript-多重命名空间及引入文件
 // 命名空间 多重命名空间
+// console.log(MyMath.sumValue(10,5))
+// console.log(MyMath.Circle.calcCircle(8))
+// 引入文件
+/// <reference path='circle.ts'/>
+/// <reference path='sumValue.ts'/>
 console.log(MyMath.sumValue(10,5))
 console.log(MyMath.Circle.calcCircle(8))
+// tsc app.ts --outfile app.js
