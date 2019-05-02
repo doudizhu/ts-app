@@ -88,7 +88,7 @@ console.log(myFunc(5,5))
 
 
 
-
+/*
 // object & type
 let dataObj: {name:string,age:number} = {
     name: 'Henry',
@@ -109,4 +109,56 @@ let complex:{data:number[],myFunc:(item:number)=>number[]} = {
     }
 }
 
-console.log(complex.myFunc(20))
+// console.log(complex.myFunc(20))
+
+// type 生成类型
+type MyType = {data:number[],myFunc:(item:number)=>number[]}
+
+let complex2:MyType = {
+    data: [1,2,34],
+    myFunc: function(item:number):number[]{
+        this.data.push(item)
+        return this.data
+    }
+}
+*/
+
+
+
+/*
+// union type 检查类型 null undefined never
+// union type
+let unionType: number | string | boolean = 12
+unionType = '12'
+unionType = true
+
+// 检查类型
+let checkType = 10
+if(typeof checkType == 'string'){
+    console.log('number')
+}
+
+// null 和 undefined
+let myNull = null
+myNull = undefined
+
+// never
+// never类型是任何类型的子类型,也可以赋值给任何类型；
+// 然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。即使any也不可以赋值给never。
+// 通常表现为抛出异常或无法执行到终止点（例如无限循环）。
+let x:never
+// x = 123 // 不能将其他类型转为never类型:不能将类型“123”分配给类型“never”。ts(2322)
+// never的应用场景 抛出异常
+function error(message:string):never{
+    throw new Error(message)
+}
+// 死循环
+function loop():never{
+    while(true){}
+}
+
+let y:number
+y = (()=>{
+    throw new Error('message')
+})()
+*/
