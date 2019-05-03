@@ -403,7 +403,7 @@ let Person2: Person2 = {
 */
 
 
-
+/*
 // 17.TypeScript-接口继承及类的实现
 // interface 接口
 interface PersonInterface{
@@ -446,3 +446,70 @@ const employee: Employee = {
 }
 
 console.log(employee)
+*/
+
+
+
+
+// 18.TypeScript-泛型Generic的函数应用
+// TypeScript 中的泛型(Generic)
+
+// 1）在函数中使用泛型
+// function identify<T>(arg: T): T {
+//   return arg
+// }
+// 可以明确指定类型
+// console.log(identify<string>('string'))
+// 交给ts推断类型
+// console.log(identify(true))
+
+// 2）在接口中使用泛型
+/*
+// 方式一：
+interface GenericIdentify{
+    <T>(arg:T):T
+}
+function identify<T>(arg: T): T {
+  return arg
+}
+let myIdentify:GenericIdentify = identify
+// 可以明确指定类型
+console.log(myIdentify<string>('my-string'))
+// 交给ts推断类型
+console.log(identify(30))
+*/
+/*
+// 方式二：泛型提升到接口层面
+interface GenericIdentify<T>{
+    (arg:T):T
+}
+function identify<T>(arg: T): T {
+    return arg
+}
+let myIdentify:GenericIdentify<number | string> = identify
+
+// 可以明确指定类型
+console.log(myIdentify('my-string'))
+// 交给ts推断类型
+console.log(identify(30))
+*/
+
+// 3）为泛型添加约束
+// function getLength<T extends { length:any } >(obj:T):any{
+//     return obj.length
+// }
+// const obj = {
+//     name: '米斯特吴',
+//     age: 30,
+//     length: 10,
+// }
+
+// console.log(getLength(obj))
+// ps: 让当前泛型指定某一类型
+// function getLength<T extends number >(obj:T):any{
+//     return obj
+// }
+
+// const obj = 25
+
+// console.log(getLength(obj))
