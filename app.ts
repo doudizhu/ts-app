@@ -513,3 +513,60 @@ console.log(identify(30))
 // const obj = 25
 
 // console.log(getLength(obj))
+
+
+
+
+
+
+
+// 19.TypeScript-泛型Generic类的应用
+// 泛型-class
+// 方式一：普通
+// class CountNumber{
+//     number1: any
+//     number2: any
+
+//     constructor(num1:number,num2:number){
+//         this.number1 = num1
+//         this.number2 = num2
+//     }
+
+//     calcalate():number{
+//         return this.number1 * this.number2
+//     }
+// }
+// const countNumber = new CountNumber(10,20)
+// console.log(countNumber.calcalate())
+// 方式二：泛型普通
+// class CountNumber<T>{
+//     number1: T
+//     number2: T
+
+//     constructor(num1:T,num2:T){
+//         this.number1 = num1
+//         this.number2 = num2
+//     }
+
+//     calcalate():number{
+//         return +this.number1 * +this.number2
+//     }
+// }
+// const countNumber = new CountNumber<string>('10','20')
+// console.log(countNumber.calcalate())
+// 方式三：泛型约束
+class CountNumber<T extends number>{
+    number1: T
+    number2: T
+
+    constructor(num1:T,num2:T){
+        this.number1 = num1
+        this.number2 = num2
+    }
+
+    calcalate():number{
+        return this.number1 * this.number2
+    }
+}
+const countNumber = new CountNumber<number>(12,20)
+console.log(countNumber.calcalate())
