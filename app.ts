@@ -356,8 +356,47 @@ console.log(MyMath.Circle.calcCircle(8))
  * 和
  * tsc
  */
-import * as Circle from './stuff/circle'
-import sum from './stuff/sumValue'
-console.log(Circle.PI)
-console.log(Circle.calcCircle(8))
-console.log(sum(8,12))
+// import * as Circle from './stuff/circle'
+// import sum from './stuff/sumValue'
+// console.log(Circle.PI)
+// console.log(Circle.calcCircle(8))
+// console.log(sum(8,12))
+
+
+
+// 16.TypeScript-初识interface接口的用法
+// interface 接口
+interface Person{
+    name: string,
+    age: number, // :号，必须要写的
+    sex?: string, // ?: 可选
+    readonly salary: number, // 只读，不能修改
+    [propName:string]:any,
+    greet():void,
+}
+let person: Person = {
+    name: '米斯特吴',
+    age: 28,
+    // sex: '男',
+    salary:7000,
+    ids:[1,5,10],
+    greet(){
+        console.log('hello everyone')
+    },
+}
+// Person.salary = 1000 // 只读，不能修改:Cannot assign to 'salary' because it is a read-only property.ts(2540)
+function printPerson(person:Person){
+    console.log(`我叫${person.name}，我的年龄是${person.age}，我的工资是${person.salary}`)
+}
+printPerson(person)
+person.greet()
+
+// interface 可以继承； type不能继承
+type Person2 = {
+    name: string,
+    age: number,
+}
+let Person2: Person2 = {
+    name: '米斯特吴',
+    age: 28,
+}
